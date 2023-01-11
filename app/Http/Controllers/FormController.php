@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Form;
   
-class ProductController extends Controller
+class FormController extends Controller
 {
 
     public function index()
