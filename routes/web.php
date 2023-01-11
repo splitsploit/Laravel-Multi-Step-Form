@@ -28,6 +28,6 @@ Route::get('/forms/create-step-two', [FormController::class, 'createStepTwo'])->
 
 Route::get('/forms/create-step-two', [FormController::class, 'postCreateStepTwo'])->name('forms.create.step.two.post');
 
-Route::get('/forms/create-step-three', [FormController::class, 'createStepThree'])->name('forms.create.step.three');
+// Route::get('/forms/create-step-three', [FormController::class, 'createStepThree'])->name('forms.create.step.three');
 
-Route::get('/forms/create-step-three', [FormController::class, 'postCreateStepThree'])->name('forms.create.step.three.post');
+// Route::get('/forms/create-step-three', [FormController::class, 'postCreateStepThree'])->name('forms.create.step.three.post');
