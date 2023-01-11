@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <form action="{{ route('products.create.step.two.post') }}" method="POST">
+            <form action="{{ route('forms.create.step.two.post') }}" method="POST">
                 @csrf
                 <div class="card">
-                    <div class="card-header">Step 2: Status & Stock</div>
+                    <div class="card-header">Step 2: Informasi Usaha</div>
   
                     <div class="card-body">
   
@@ -22,24 +22,28 @@
                             @endif
   
                             <div class="form-group">
-                                <label for="description">Product Status</label><br/>
-                                <label class="radio-inline"><input type="radio" name="status" value="1" {{{ (isset($product->status) && $product->status == '1') ? "checked" : "" }}}> Active</label>
-                                <label class="radio-inline"><input type="radio" name="status" value="0" {{{ (isset($product->status) && $product->status == '0') ? "checked" : "" }}}> DeActive</label>
+                                <label for="nama_usaha">Nama Usaha :</label>
+                                <input type="text"  value="{{{ $form->nama_usaha ?? '' }}}" class="form-control" id="namaUsaha" name="nama_usaha"/>
                             </div>
   
                             <div class="form-group">
-                                <label for="description">Product Stock</label>
-                                <input type="text"  value="{{{ $product->stock ?? '' }}}" class="form-control" id="productAmount" name="stock"/>
+                                <label for="bukti_po">Bukti PO :</label>
+                                <input type="text"  value="{{{ $product->bukti_po ?? '' }}}" class="form-control" id="buktiPo" name="bukti_po"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="invoice">Invoice :</label>
+                                <input type="text"  value="{{{ $product->invoice ?? '' }}}" class="form-control" id="buktiPo" name="invoice"/>
                             </div>
   
                     </div>
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-md-6 text-left">
-                                <a href="{{ route('products.create.step.one') }}" class="btn btn-danger pull-right">Previous</a>
+                                <a href="{{ route('forms.create.step.one') }}" class="btn btn-danger pull-right">Sebelumnya</a>
                             </div>
                             <div class="col-md-6 text-right">
-                                <button type="submit" class="btn btn-primary">Next</button>
+                                <button type="submit" class="btn btn-primary">Selanjutnya</button>
                             </div>
                         </div>
                     </div>

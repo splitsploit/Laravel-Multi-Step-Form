@@ -72,20 +72,20 @@ class FormController extends Controller
     }
   
 
-    // public function createStepThree(Request $request)
-    // {
-    //     $product = $request->session()->get('product');
+    public function createStepThree(Request $request)
+    {
+        $form = $request->session()->get('form');
   
-    //     return view('forms.create-step-three',compact('product'));
-    // }
+        return view('forms.create-step-three',compact('form'));
+    }
  
-    // public function postCreateStepThree(Request $request)
-    // {
-    //     $product = $request->session()->get('product');
-    //     $product->save();
+    public function postCreateStepThree(Request $request)
+    {
+        $form = $request->session()->get('form');
+        $form->save();
   
-    //     $request->session()->forget('product');
+        $request->session()->forget('form');
   
-    //     return redirect()->route('forms.index');
-    // }
+        return redirect()->route('forms.index');
+    }
 }

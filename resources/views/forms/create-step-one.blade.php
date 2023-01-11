@@ -3,11 +3,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <form action="{{ route('products.create.step.one.post') }}" method="POST">
+            <form action="{{ route('forms.create.step.one.post') }}" method="POST">
                 @csrf
   
                 <div class="card">
-                    <div class="card-header">Step 1: Basic Info</div>
+                    <div class="card-header">Step 1: Informasi Pribadi</div>
   
                     <div class="card-body">
   
@@ -22,23 +22,34 @@
                             @endif
   
                             <div class="form-group">
-                                <label for="title">Product Name:</label>
-                                <input type="text" value="{{ $product->name ?? '' }}" class="form-control" id="taskTitle"  name="name">
+                                <label for="title">Nama Lengkap :</label>
+                                <input type="text" value="{{ $form->name ?? '' }}" class="form-control" id="namaLengkap"  name="name">
                             </div>
                             <div class="form-group">
-                                <label for="description">Product Amount:</label>
-                                <input type="text"  value="{{{ $product->amount ?? '' }}}" class="form-control" id="productAmount" name="amount"/>
+                                <label for="nomor_whatsapp">Nomor WhatsApp :</label>
+                                <input type="text"  value="{{{ $form->nomor_whatsapp ?? '' }}}" class="form-control" id="nomorWhatsapp" name="nomor_whatsapp"/>
                             </div>
    
                             <div class="form-group">
-                                <label for="description">Product Description:</label>
-                                <textarea type="text"  class="form-control" id="taskDescription" name="description">{{{ $product->description ?? '' }}}</textarea>
+                                <label for="alamat_lengkap">Alamat Lengkap :</label>
+                                <textarea type="text"  class="form-control" id="alamatLengkap" name="alamat_lengkap">{{{ $form->alamat_lengkap ?? '' }}}</textarea>
                             </div>
+
+                            <div class="form-group">
+                                <label for="tempat_tgl_lahir">Tempat, Tanggal Lahir :</label>
+                                <input type="text"  value="{{{ $form->tempat_tgl_lahir ?? '' }}}" class="form-control" id="tempatTglLahir" name="tempat_tgl_lahir"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pekerjaan">Pekerjaan :</label>
+                                <input type="text"  value="{{{ $form->pekerjaan ?? '' }}}" class="form-control" id="pekerjaan" name="pekerjaan"/>
+                            </div>
+   
                           
                     </div>
   
                     <div class="card-footer text-right">
-                        <button type="submit" class="btn btn-primary">Next</button>
+                        <button type="submit" class="btn btn-primary">Selanjutnya</button>
                     </div>
                 </div>
             </form>
