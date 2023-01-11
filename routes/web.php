@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/forms', [FormController::class, 'index'])->name('forms.index');
+
+Route::get('/forms/create-step-one', [FormController::class, 'createStepOne'])->name('forms.create.step.one');
+
+Route::get('/forms/create-step-one', [FormController::class, 'postCreateStepOne'])->name('forms.create.step.one.post');
+
+Route::get('/forms/create-step-two', [FormController::class, 'createStepTwo'])->name('forms.create.step.two');
+
+Route::get('/forms/create-step-two', [FormController::class, 'postCreateStepTwo'])->name('forms.create.step.two.post');
+
+Route::get('/forms/create-step-three', [FormController::class, 'createStepThree'])->name('forms.create.step.three');
+
+Route::get('/forms/create-step-three', [FormController::class, 'postCreateStepThree'])->name('forms.create.step.three.post');
